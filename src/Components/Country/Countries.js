@@ -12,9 +12,11 @@ const Countries = () => {
         <div>
             <h1>All Countries info</h1>
             <h5>Country Available: {country.length}</h5>
+            <div className='country-container'>
             {
-                country.map(country => <InfoCountry country={country}></InfoCountry>)
+                country.map(country => <InfoCountry country={country} name={country.name.common}  ></InfoCountry>)
             }
+            </div>
         </div>
     );
 };
@@ -24,9 +26,9 @@ const InfoCountry = props => {
     return(
         <div className='counDiv'>
             <div>
-            <h3>Name: {props.country.name}</h3>
-            <h4>Capital: {props.capital}</h4>
-            <p>Population: <b>{props.population}</b></p>
+            <h3>Name: {props.name}</h3>
+            <h4>Capital: {props.country.capital}</h4>
+            <p>Population: <b>{props.country.population}</b></p>
             </div>
         </div>
     )
